@@ -12,7 +12,7 @@
 }
 
 body {
-  overflow: hidden;
+  background-color: #0B0D17;
 }
 
 video {
@@ -40,4 +40,16 @@ h2.wlc {}
 h1.title {
   font-size: 50px;
   font-weight: 900;
+}
+
+.overview {
+  background-image: url(../public/Bitmap.png);
+  background-size: cover;
+  background-position: center;
+  transition: background-size 4s ease;
+}
+
+.zoomed {
+  background-size: 200%;
+  /* Adjust the zoom level as needed */
 }
