@@ -36,14 +36,14 @@ export function Earth(props) {
                 <sphereGeometry args={[1, 32, 32]} />
                 <meshPhongMaterial specularMap={specularMap} />
                 <meshStandardMaterial map={colorMap} normalMap={normalMap} metalness={0.4} roughness={0.7} />
-                {/* <OrbitControls
-                    enableZoom={true}
+                <OrbitControls
+                    enableZoom={false}
                     enablePan={true}
                     enableRotate={true}
-                    panSpeed={0.5}
+                    panSpeed={1}
                     zoomSpeed={0.4}
 
-                /> */}
+                />
 
             </mesh>
         </>
