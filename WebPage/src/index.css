@@ -20,6 +20,7 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
 }
 
 .container {
@@ -34,6 +35,7 @@ video {
   /* text-align: center; */
   color: white;
 }
+
 
 h2.wlc {}
 
@@ -53,108 +55,120 @@ h1.title {
   background-size: 200%;
   /* Adjust the zoom level as needed */
 }
+
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	font-family: "Titillium Web", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
 }
 
 :root {
-	--mainColor: #29335c;
-	--mainColorLight: #5767aa;
-	--secondaryColor: #1e1c1c;
-	--textColor: #eee;
+  --mainColor: #29335c;
+  --mainColorLight: #5767aa;
+  --secondaryColor: #1e1c1c;
+  --textColor: #eee;
 }
 
 header {
   z-index: 3;
   display: flex;
-	align-items: center;
-  position: absolute;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  align-items: center;
+  position: fixed;
   top: 0;
-  left: 50%;
-	justify-content: space-between;
   text-align: center;
-  display: inline-block;
-  height: 80px;
-	padding: 0 2rem;
-	background-color: #0005;
-	color: var(--textColor);
+  height: 60px;
+  padding: 0 2rem;
+  background-color: transparent;
+  color: var(--textColor);
 }
 
 nav a {
-	margin: 0 1rem;
-	color: var(--textColor);
-	text-decoration: none;
+  z-index: 4;
+  margin: 0 1rem;
+  color: var(--textColor);
+  text-decoration: none;
 }
+
 
 nav a:hover {
-	color: var(--secondaryColor);
+  color: var(--secondaryColor);
 }
 
+
 header .nav-btn {
-	padding: 5px;
-	cursor: pointer;
-	background: transparent;
-	border: none;
-	outline: none;
-	color: var(--textColor);
-	visibility: hidden;
-	opacity: 0;
-	font-size: 1.8rem;
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
 }
 
 header div,
 nav {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 @media only screen and (max-width: 1024px) {
-	header .nav-btn {
-		visibility: visible;
-		opacity: 1;
-	}
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+  }
 
-	header nav {
-		position: fixed;
-		top: -100vh;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1.5rem;
-		background-color: var(--mainColor);
-		transition: 1s;
-	}
+  header nav {
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: var(--mainColor);
+    transition: 1s;
+  }
 
-	header .responsive_nav {
-		transform: translateY(100vh);
-	}
+  header .responsive_nav {
+    transform: translateY(100vh);
+  }
 
-	nav .nav-close-btn {
-		position: absolute;
-		top: 2rem;
-		right: 2rem;
-	}
+  nav .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
 
-	nav a {
-		font-size: 1.5rem;
-	}
+  nav a {
+    font-size: 1.5rem;
+  }
 }
 
 .overview {
   background-image: url(../public/Bitmap.png);
   background-size: cover;
   background-position: center;
-  transition: background-size 4s ease;
+  transition: background-size 0.3s ease;
+  z-index: -1;
 }
 
 .zoomed {
-  background-size: 200%;
+  background-attachment: fixed;
+
+}
+
+.zoomed {
+  /* background-size: 200%; */
   /* Adjust the zoom level as needed */
 }
