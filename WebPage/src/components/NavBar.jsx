@@ -29,17 +29,17 @@ function NavBar() {
 				<a href="/#" onClick={() => scrollToSection('overview')}>Overview</a>
 				<a href="/#" onClick={() => scrollToSection('demo')}>Explore</a>
 				<a href="/#" onClick={() => scrollToSection('model')}>Play</a>
-				<button
-					className="nav-btn nav-close-btn"
-					onClick={showNavbar}>
-					<FaTimes />
-				</button>
 			</nav>
+			{/* <button
+				className="nav-btn nav-close-btn"
+				onClick={showNavbar}>
+				<FaTimes />
+			</button>
 			<button
 				className="nav-btn"
 				onClick={showNavbar}>
 				<FaBars />
-			</button>
+			</button> */}
 		</header>
 	);
 }
