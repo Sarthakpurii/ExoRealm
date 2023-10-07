@@ -1,12 +1,14 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import NavBar from './components/NavBar';
 import BgVideo from "./components/BgVideo";
 
 function App() {
   return(
-    <div className="App">
-      <BgVideo />
-    </div>
+    <React.Fragment>
+        <NavBar />
+        <BgVideo />
+    </React.Fragment>
   );
 }
 
