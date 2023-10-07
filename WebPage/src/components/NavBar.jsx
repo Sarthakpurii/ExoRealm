@@ -11,14 +11,24 @@ function NavBar() {
 		);
 	};
 
+	const home = useRef();
+	const model = useRef();
+	const travel = useRef();
+
+	const scrollToSection = (sectionId) => {
+		const section = document.getElementById(sectionId);
+		if (section) {
+			section.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
 	return (
-		<header>
-			<h3>LOGO</h3>
-			<nav ref={navRef}>
-				<a href="/#">Home</a>
-				<a href="/#">My work</a>
-				<a href="/#">Blog</a>
-				<a href="/#">About me</a>
+		<header className="rounded-xl mt-4 z-40">
+			{/* <h3>LOGO</h3> */}
+			<nav ref={navRef} className="z-40">
+				<a href="/#" onClick={() => scrollToSection('home')} >Home</a>
+				<a href="/#" onClick={() => scrollToSection('overview')}>Overview</a>
+				<a href="/#" onClick={() => scrollToSection('demo')}>Explore</a>
+				<a href="/#" onClick={() => scrollToSection('model')}>Play</a>
 				<button
 					className="nav-btn nav-close-btn"
 					onClick={showNavbar}>
