@@ -15,8 +15,12 @@ function Overview() {
         };
     }, []);
     return (
-        <section className={`overview ${scrollY > 100 ? 'zoomed' : ''} h-screen relative text-white`}>
-
+        <section id="overview" style={{ backgroundSize: `${70 + scrollY / 12}%` }} className={`flex flex-col items-center overview ${scrollY > 100 ? 'zoomed' : ''} h-screen relative text-white border`}>
+            <div className='text-7xl mt-10 font-bellefair text-white'>Overview</div>
+            <section className='w-full flex flex-row'>
+                <div className='w-1/2 border h-[84vh]'>hello</div>
+                <div className='w-1/2 border h-[84vh]'>Overview Details</div>
+            </section>
         </section>
     )
 }
