@@ -2,7 +2,6 @@ import React, { Suspense } from 'react'
 import { Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import styled from 'styled-components'
-import { useGLTF, Stage, PresentationControls } from "@react-three/drei";
 import { Earth } from '../components/earth'
 
 
@@ -18,10 +17,15 @@ const CanvasContainer = styled.div`
 export default function Model() {
   return (
     <div id='demo' className='-z-10 h-screen w-full '>
-      <div className='absolute top-[200vh] h-screen text-white border left-[50vw]'>
-        This is new text Section Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis incidunt blanditiis nemo ea, fugit totam repellendus! Tempore enim doloribus beatae incidunt a totam fugiat consequuntur eos ipsa amet quisquam obcaecati tenetur recusandae reiciendis, delectus quaerat, iure quo est eius rem. Delectus iste sapiente similique reprehenderit assumenda officia maiores tempora consequuntur dolorum. Quam alias reprehenderit atque eveniet perspiciatis, magni assumenda deleniti asperiores, qui expedita numquam, iusto accusamus. Atque inventore esse incidunt accusantium dicta error facilis! Laboriosam at necessitatibus, iure vero iusto officia ullam consequuntur iste? Eligendi quam sit porro magni animi voluptate perferendis eveniet odit neque. Ab ducimus quia, officiis animi iure repellat adipisci accusantium, fugit quisquam quibusdam veniam natus quaerat praesentium, quos voluptate harum explicabo fugiat minima consequatur assumenda beatae dolorum. Error magni aspernatur ipsa maiores dolorem numquam, explicabo voluptatem tenetur atque laboriosam expedita reprehenderit. Ea sapiente at sint. Accusantium enim animi veritatis natus impedit, placeat ea in labore magni accusamus maxime laboriosam sit atque quibusdam numquam consectetur, eaque culpa ad? Natus minima a pariatur consequatur, repellat illo recusandae! Provident nobis in voluptate beatae accusamus? Quae molestiae voluptas ipsum sed nisi laborum hic velit sint consequuntur. Eius nisi temporibus in laboriosam harum nesciunt, reiciendis commodi est tenetur, voluptatum repellat vitae.
+      <div className='absolute top-[200vh] h-[80vh] mt-[20vh] text-white  left-[50vw] z-10'>
+        {/* Try out your hands on the 3D model and dive into the thrilling experience of an unraveling journey of ExoRealm. */}
+        <h2 className='font-bellefair text-[100px] leading-none'>51 Eridani B</h2>
+        <p className='font-barlow p-2 text-[#D0D6F9] text-xl w-[500px]'>It is 96 light years away from the solar system, and it is approximately 20 million years old. It's an gas giant exoplanet that orbits an F-type star. Its mass is 2 Jupiters, it takes 32 years to complete one orbit of its star, and is 13.2 AU from its star.</p>
+        <hr className='mt-20 w-[450px] ml-3'/>
+        <span className='flex flex-row gap-10 justify-between w-[450px] mt-5 ml-3  font-barlowc'><p className=' text-[#D0D6F9]'>AVG. DISTANCE<br/>96 Light Years</p> <p className='text-[#D0D6F9]'>DISCOVERY DATE<br/>2015</p></span>
+
       </div>
-      <CanvasContainer className='h-screen w-full text-white border'>
+      <CanvasContainer className='h-screen w-full z-[-10]'>
         <Canvas>
           <Suspense fallback={null}>
             <Earth />
