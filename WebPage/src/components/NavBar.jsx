@@ -1,45 +1,24 @@
 import { useRef } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
 import "../index.css";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
-	const navRef = useRef();
+	const activeStyle = {
+		fontWeight: "bold",
+		textDecoration: "underline",
+		color: "#161616",
+	}
 
-	const showNavbar = () => {
-		navRef.current.classList.toggle(
-			"responsive_nav"
-		);
-	};
 
-	const home = useRef();
-	const model = useRef();
-	const travel = useRef();
-
-	const scrollToSection = (sectionId) => {
-		const section = document.getElementById(sectionId);
-		if (section) {
-			section.scrollIntoView({ behavior: 'smooth' });
-		}
-	};
 	return (
-		<header className="rounded-xl mt-4 z-40">
-			{/* <h3>LOGO</h3> */}
-			<nav ref={navRef} className="z-40">
-				<a href="/#" onClick={() => scrollToSection('home')} >Home</a>
-				<a href="/#" onClick={() => scrollToSection('overview')}>Overview</a>
-				<a href="/#" onClick={() => scrollToSection('demo')}>Explore</a>
-				<a href="/#" onClick={() => scrollToSection('model')}>Play</a>
+		<header className="rounded-xl  self-center mt-4 z-40">
+			<nav className="">
+				<NavLink style={({ isActive }) => isActive ? activeStyle : null} to="/" >Home</NavLink>
+				<NavLink style={({ isActive }) => isActive ? activeStyle : null} to="/game">Play</NavLink>
+				<NavLink style={({ isActive }) => isActive ? activeStyle : null} to="/overview">Overview</NavLink>
+				<NavLink style={({ isActive }) => isActive ? activeStyle : null} to="/model">Explore</NavLink>
 			</nav>
-			{/* <button
-				className="nav-btn nav-close-btn"
-				onClick={showNavbar}>
-				<FaTimes />
-			</button>
-			<button
-				className="nav-btn"
-				onClick={showNavbar}>
-				<FaBars />
-			</button> */}
+
 		</header>
 	);
 }

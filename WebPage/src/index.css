@@ -11,6 +11,9 @@
   padding: 0;
   font-family: sans-serif;
 }
+.site-wrapper{
+  
+}
 
 body {
   background-color: #0B0D17;
@@ -51,10 +54,6 @@ h1.title {
   transition: background-size 4s ease;
 }
 
-.zoomed {
-  background-size: 200%;
-  /* Adjust the zoom level as needed */
-}
 
 * {
   padding: 0;
